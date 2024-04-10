@@ -59,6 +59,7 @@ export default class PostRepository{
             throw new AppError("something went wrong in d/b", 500);
     }
     }
+      
     async deletePost(userID,postId){
         try{
             const delPost = await PostModel.deleteOne({

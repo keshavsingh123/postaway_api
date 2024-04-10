@@ -5,7 +5,7 @@ import { connectMongooseToMongoDB } from "./src/config/mongooseConfig.js";
 import { postRouter } from "./src/features/Post/post.route.js";
 import JwtAuth from "./src/Middleware/jwt.middleware.js";
 import { commentRouter } from "./src/features/Comment/comment.route.js";
-
+  import { likeRouter } from "./src/features/Like/like.route.js";
 const app = express();
 
 app.use(express.json());
@@ -14,6 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/api/user", userRouter);
 app.use("/api/post",JwtAuth, postRouter);
 app.use("/api/comment",JwtAuth, commentRouter);
+app.use("/api/like",JwtAuth,likeRouter)
 
 
 
